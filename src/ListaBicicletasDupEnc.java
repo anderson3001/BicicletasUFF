@@ -39,7 +39,7 @@ public class ListaBicicletasDupEnc {
         }
     }
 
-    public NoBicicleta getById (int id){
+    public Bicicleta getById (int id){
         NoBicicleta atual = primeiro;
         if (atual == null) {
             System.out.println("A lista está vazia.");
@@ -47,7 +47,7 @@ public class ListaBicicletasDupEnc {
         }
         while (atual != null){
             if (atual.dado.getId() == id){
-                return atual;
+                return atual.dado;
             }
             atual = atual.prox;
         }
