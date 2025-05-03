@@ -67,16 +67,13 @@ public class IO {
     
 
 
-    public static ListaEstacoes lerEstacoes(String nomeArq){
-        ListaEstacoes les = null;
-        
-        /* Implementar o método que lê os dados das estações*/
-        
-        return les;
-        
+    public static ListaEstacoesDupEnc lerEstacoes(String nomeArq){
+        ListaEstacoesDupEnc a = new ListaEstacoesDupEnc();
+        return a;
+        //modifcar
     }
     
-    public static void lerLocalizacaoBicicletas(String nomeArq, ListaBicicletasDupEnc lb, ListaEstacoes les){
+    public static void lerLocalizacaoBicicletas(String nomeArq, ListaBicicletasDupEnc lb, ListaEstacoesDupEnc les){
         
         /* Implementar o método que lê a localização das bicicletas.
            Ele deve vincular uma bicicleta a uma estacao e estacionar a bicicleta na devida estação.

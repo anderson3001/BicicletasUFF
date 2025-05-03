@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Sistema {
     private ListaBicicletasDupEnc bicicletas;
-    private ListaEstacoes estacoes;
+    private ListaEstacoesDupEnc estacoes;
     private boolean finalizar;
     
     Sistema(){
@@ -46,7 +46,7 @@ public class Sistema {
                 this.consultarEstacoes();
                 System.out.println("Digite o identificador da estacao desejada");
                 int idEst = teclado.nextInt();
-                Estacao estacao = estacoes.getId(idEst);
+                Estacao estacao = estacoes.getById(idEst);
                 if (estacao!=null){
                     b.estacionar(estacao);
                 }
