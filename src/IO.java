@@ -14,8 +14,8 @@ import java.io.IOException;
  */
 public class IO {
     
-    public static ListaBicicletas lerBicicletas(String nomeArq){
-        ListaBicicletas lb = null;
+    public static ListaBicicletasDupEnc lerBicicletas(String nomeArq){
+        ListaBicicletasDupEnc lb = null;
         
         FileReader fr = null;
         BufferedReader br = null;
@@ -23,7 +23,7 @@ public class IO {
         try{
             fr = new FileReader(nomeArq);
             br = new BufferedReader(fr);
-            lb = new ListaBicicletas(100);
+            lb = new ListaBicicletasDupEnc();
             boolean eof = false;
             do{
                 String linha = br.readLine();
@@ -76,7 +76,7 @@ public class IO {
         
     }
     
-    public static void lerLocalizacaoBicicletas(String nomeArq, ListaBicicletas lb, ListaEstacoes les){
+    public static void lerLocalizacaoBicicletas(String nomeArq, ListaBicicletasDupEnc lb, ListaEstacoes les){
         
         /* Implementar o método que lê a localização das bicicletas.
            Ele deve vincular uma bicicleta a uma estacao e estacionar a bicicleta na devida estação.

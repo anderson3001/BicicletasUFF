@@ -4,7 +4,7 @@
 import java.util.Scanner;
 
 public class Sistema {
-    private ListaBicicletas bicicletas;
+    private ListaBicicletasDupEnc bicicletas;
     private ListaEstacoes estacoes;
     private boolean finalizar;
     
@@ -60,13 +60,8 @@ public class Sistema {
 
 
     
-    public void consultarBicicletas(){
-        System.out.println("________________________________________________________________________________________________________________");
-        System.out.println("Bicicletas cadastradas no sistema");
-        for (int i=0;i<bicicletas.length();i++){
-                System.out.println(bicicletas.get(i));
-        }
-        System.out.println("________________________________________________________________________________________________________________");
+    public void consultarBicicletas() {
+        bicicletas.imprimir();
     }
 
     public void cadastrarEstacoes(){
