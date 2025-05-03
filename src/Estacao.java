@@ -13,13 +13,13 @@ public class Estacao {
     private int id;
     private String nome;
     private String localidade;
-    private ListaBicicletas bicicletas;
+    private ListaBicicletasDupEnc bicicletas;
     
     Estacao(int id, String nome, String localidade){
         this.id = id;
         this.nome = nome;
         this.localidade = localidade;
-        this.bicicletas = new ListaBicicletas(MAXBICICLETAS);
+        this.bicicletas = new ListaBicicletasDupEnc();
     }
 
     public void adicionarBicicleta(Bicicleta b){
@@ -27,7 +27,7 @@ public class Estacao {
     }
     
     public void removerBicicleta(int id){
-       bicicletas.removerId(id);
+       bicicletas.deleteById(id);
     }
     
     public int getId() {
@@ -54,11 +54,11 @@ public class Estacao {
         this.localidade = localidade;
     }
 
-    public ListaBicicletas getBicicletas() {
+    public ListaBicicletasDupEnc getBicicletas() {
         return bicicletas;
     }
 
-    public void setBicicletas(ListaBicicletas bicicletas) {
+    public void setBicicletas(ListaBicicletasDupEnc bicicletas) {
         this.bicicletas = bicicletas;
     }
     
@@ -73,12 +73,19 @@ public class Estacao {
     public String bicicletasToString(){
         
         /* Modifique este metodo para que ele retorne uma string contendo os ids das bicicletas */
-        String s = "[";
+        StringBuilder s = new StringBuilder("[");
+        NoBicicleta aux = bicicletas.getPrimeiro();
+        while (aux != null) {
+            s.append(aux.dado.getId());
+            if (aux.prox != null) {
+                s.append(", ");
+            }
+            aux = aux.prox;
+        }
         
+        s.append("]");
         
-        s+="]";
-        
-        return s;
+        return s.toString();
     }
 
     @Override

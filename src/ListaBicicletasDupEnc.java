@@ -122,6 +122,9 @@ public class ListaBicicletasDupEnc {
     public NoBicicleta getPrimeiro() {
         return primeiro;
     }
+    public Bicicleta getPrimeiraBike(){
+        return primeiro.dado;
+    }
 
     public void setPrimeiro(NoBicicleta primeiro) {
         this.primeiro = primeiro;//mudar
