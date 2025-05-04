@@ -69,6 +69,44 @@ public class IO {
 
     public static ListaEstacoesDupEnc lerEstacoes(String nomeArq){
         ListaEstacoesDupEnc a = new ListaEstacoesDupEnc();
+
+        FileReader fr = null;
+        BufferedReader br = null;
+
+        try{
+            fr = new FileReader(nomeArq);
+            br = new BufferedReader(fr);
+
+            boolean eof = false;
+
+            do{
+                String linha = br.readLine();
+                if (linha != null){
+                    String[] campos = linha.split(" ");
+                    int id = Integer.parseInt(campos[0]);
+                    String nome = campos[1];
+                    String localidade = campos[2];
+                    Estacao estacao = new Estacao(id, nome, localidade);
+                    a.append(estacao);
+                }
+                else {
+                    eof = true;
+                }
+
+            }while (eof != true);
+
+        }catch (FileNotFoundException e){
+            System.out.println(e);
+        }catch(IOException e) {
+            System.out.println(e);
+        }finally{
+            try{
+                if (fr != null) fr.close();
+                if (br != null) br.close();
+            }catch(IOException e){
+                e.printStackTrace();
+            }
+        }
         return a;
         //modifcar
     }
@@ -78,7 +116,7 @@ public class IO {
         /* Implementar o método que lê a localização das bicicletas.
            Ele deve vincular uma bicicleta a uma estacao e estacionar a bicicleta na devida estação.
         */
-        
+
     }
     
 }
