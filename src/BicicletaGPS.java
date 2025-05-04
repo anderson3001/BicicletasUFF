@@ -20,7 +20,7 @@ public class BicicletaGPS extends Bicicleta {
     
     public Ponto2D getPosicao(){
         /* Modifique este metodo para retornar  a posicao via o GPS */
-        GPS gps = new GPS(getId(), "1.0");
+        GPS gps = new GPS(getId(), "XYZ");
         
         return gps.getPosicao();
     }
